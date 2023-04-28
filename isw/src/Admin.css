@@ -1,0 +1,75 @@
+.device{
+  content: url("../public/cellphone icon.jpg");
+  width: 100px;
+  height: 200px;
+}
+
+.cell,
+.hlr,
+.msc {
+  height: 100px;
+  width: 100px;
+  background-color: #555;
+  text-align: center;
+  color: white;
+  font-size: larger;
+}
+
+.hlr {
+  width: 200px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.centered-content {
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 3rem);
+}
+
+.hlr {
+  grid-column: 4 / span 2;
+  grid-row: 1;
+}
+
+.msc {
+    grid-row: 2;
+}
+
+.msc-left {
+    grid-column: 2;
+}
+
+.msc-right {
+    grid-column: 7;
+}
+
+.cell {
+  grid-row: 3;
+}
+
+.cell:nth-child(4) {
+  grid-column: 1;
+}
+
+.cell:nth-child(5) {
+  grid-column: 3;
+}
+
+.cell:nth-child(6) {
+  grid-column: 6;
+}
+
+.cell:nth-child(7) {
+  grid-column: 8;
+}
