@@ -1,0 +1,22 @@
+.contact_list {
+  	height: 50vh;
+  	overflow: hidden;
+  	overflow-y: scroll; 
+  	text-align: center;
+
+}
+.chat_spacer{
+	width: 20vw;
+}
+.spacer{
+	height: 10vh;  	
+	width: auto;	
+	background-color: white;
+}
+.chat{
+	width: auto;
+	height: 50vh;
+	overflow: hidden;
+  	overflow-y: scroll; 
+  	text-align: center;
+}
