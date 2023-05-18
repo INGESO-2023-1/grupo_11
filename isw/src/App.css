@@ -1,10 +1,9 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-link {
-  color: rgba(0, 0, 0, 0.87);
-  text-decoration: none;
-  padding-right: 16px;
+    color: rgba(0, 0, 0, 0.87);
+    text-decoration: none;
+    padding-right: 16px;
 }
-

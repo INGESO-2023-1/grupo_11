@@ -21,35 +21,45 @@ const Admin = () => {
   
 
 function Device() {
-    function handleOnDrag(e, widgetType){
-        const dragIcon = new Image(100, 200);
-        dragIcon.src = "cellphone icon.jpg";
-        var div = document.createElement('div');
-        div.appendChild(dragIcon);
-        e.dataTransfer.setDragImage(div, 0, 0);
+    function handleOnDrag(ev){
+		const dragImage = new Image();
+		dragImage.src = "cellphone icon.jpg";
+		dragImage.width = 100;
+		dragImage.height = 200;
 
-    }
+		ev.dataTransfer.setData("text/plain", ev.target.id);
+        ev.dataTransfer.setDragImage(dragImage, 0, 0);
+    } 
 
     return (
         <img 
-        src="cellphone icon.jpg"
-        height='200px'
-        width='100px'
-        alt="celu"
-        draggable='true'
-        onDragStart={(ev) => handleOnDrag(ev, "Phone")}>
-        </img>
+		id="phone"
+		src="cellphone icon.jpg"
+		height='200px'
+		width='100px'
+		alt="celu"
+		draggable='true'
+		onDragStart={(ev) => handleOnDrag(ev)}>
+		</img>
     )
 }
 
 function Cell({text}) {
-    function handleDragOver(ev){
-        ev.preventDefault()
-    }
+	function handleDragOver(ev){
+		ev.preventDefault();
+	}
+
+	function handleDrop(ev){
+		ev.preventDefault();
+		const data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+	}
+	
     return(
         <div
             className='cell'
-            onDragOver={handleDragOver}
+			onDragOver={(ev) => handleDragOver(ev)}
+			onDrop={(ev) => handleDrop(ev)}
             >{text}
         </div>
     )
@@ -68,14 +78,14 @@ function HLR({ text }) {
   }
   
   function MSC({ text, className }) {
-    function handleDragOver(ev) {
-      ev.preventDefault();
-    }
-    return (
-      <div className={`msc ${className}`} onDragOver={handleDragOver}>
-        {text}
-      </div>
-    );
+		function handleDragOver(ev) {
+			ev.preventDefault();
+		}
+		return (
+			<div className={`msc ${className}`} onDragOver={handleDragOver}>
+				{text}
+			</div>
+		);
   }
   
 
