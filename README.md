@@ -35,3 +35,5 @@ Una vez hecho eso, dentro de la misma carpeta utilizar
 Para enviar un mensaje, primero **hacer click en un dispositvo** y luego escribir el mensaje y apretar send. Luego al recargar la página se va a ver el mensaje.
 
 Al hacer click en la tuerca en la esquina superior derecha, se abre la página de admin donde ahora los celulares se pueden mover a las distintas secciones
+
+**Nota: para la parte de admin es necesario que todos los dispositivos estén desconectados antes de moverlos a las celdas**

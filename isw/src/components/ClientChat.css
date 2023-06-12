@@ -1,5 +1,5 @@
 .contact_list {
-  	height: 50vh;
+  	height: 30vh;
   	overflow: hidden;
   	overflow-y: scroll; 
   	text-align: center;
@@ -20,3 +20,9 @@
   	overflow-y: scroll; 
   	text-align: center;
 }
+
+.backButton {
+    padding: 10px 20px; 
+    margin: 10px; 
+  }
+  

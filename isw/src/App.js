@@ -1,19 +1,19 @@
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import Admin from './Admin';
-import Home from './Home'
+import Get_contacts from "./components/Get_contacts";
 import './App.css';
+import {MDBContainer} from "mdb-react-ui-kit";
 import styles from './App.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-function App() {
+function App(props) {
   
   const GearIcon = ({ to }) => (
     <Link className="App-link" to={to}>
       <FontAwesomeIcon icon={faCog} />
     </Link>
   );
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -30,7 +30,9 @@ function App() {
                   </nav>
                 </header>
                 <div>
-                  <Home />
+                  <MDBContainer fluid className="py-3" style={{ backgroundColor: "#eee" }}>    
+                    <Get_contacts userid = {props.userid}/>
+                  </MDBContainer>
                 </div>
               </>
             }

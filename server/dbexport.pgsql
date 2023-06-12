@@ -57,6 +57,19 @@ ALTER SEQUENCE public.dispositivos_id_seq OWNED BY public.dispositivos.id;
 
 
 --
+-- Name: hlr; Type: TABLE; Schema: public; Owner: sofiwi
+--
+
+CREATE TABLE public.hlr (
+    msc character varying(12),
+    sms boolean,
+    device integer NOT NULL
+);
+
+
+ALTER TABLE public.hlr OWNER TO sofiwi;
+
+--
 -- Name: mensajes; Type: TABLE; Schema: public; Owner: sofiwi
 --
 
@@ -157,11 +170,24 @@ COPY public.dispositivos (id, estado, buzon, mensaje) FROM stdin;
 
 
 --
+-- Data for Name: hlr; Type: TABLE DATA; Schema: public; Owner: sofiwi
+--
+
+COPY public.hlr (msc, sms, device) FROM stdin;
+MSC1	t	1
+MSC1	t	2
+MSC2	t	3
+\.
+
+
+--
 -- Data for Name: mensajes; Type: TABLE DATA; Schema: public; Owner: sofiwi
 --
 
 COPY public.mensajes (id, origin_id, recipient_id, msg_content, "timestamp") FROM stdin;
 19	0	1	Bienvenidos a nuestro chat :D\n(work in progress)	2023-05-18 17:07:04.043144-04
+20	0	1	hola\n	2023-06-07 13:52:32.475166-04
+23	0	1	Este es nuestro avance para el hito 5\n	2023-06-12 10:50:32.111565-04
 \.
 
 
@@ -189,7 +215,7 @@ SELECT pg_catalog.setval('public.dispositivos_id_seq', 1, false);
 -- Name: mensajes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: sofiwi
 --
 
-SELECT pg_catalog.setval('public.mensajes_id_seq', 19, true);
+SELECT pg_catalog.setval('public.mensajes_id_seq', 23, true);
 
 
 --
@@ -205,6 +231,14 @@ SELECT pg_catalog.setval('public.usuarios_id_seq', 4, true);
 
 ALTER TABLE ONLY public.dispositivos
     ADD CONSTRAINT dispositivos_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: hlr hlr_pkey; Type: CONSTRAINT; Schema: public; Owner: sofiwi
+--
+
+ALTER TABLE ONLY public.hlr
+    ADD CONSTRAINT hlr_pkey PRIMARY KEY (device);
 
 
 --
