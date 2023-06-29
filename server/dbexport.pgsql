@@ -174,9 +174,9 @@ COPY public.dispositivos (id, estado, buzon, mensaje) FROM stdin;
 --
 
 COPY public.hlr (msc, sms, device) FROM stdin;
-MSC1	t	1
-MSC1	t	2
-MSC2	t	3
+Disconnected	t	1
+Disconnected	t	2
+Disconnected	t	3
 \.
 
 
@@ -185,9 +185,15 @@ MSC2	t	3
 --
 
 COPY public.mensajes (id, origin_id, recipient_id, msg_content, "timestamp") FROM stdin;
-19	0	1	Bienvenidos a nuestro chat :D\n(work in progress)	2023-05-18 17:07:04.043144-04
-20	0	1	hola\n	2023-06-07 13:52:32.475166-04
-23	0	1	Este es nuestro avance para el hito 5\n	2023-06-12 10:50:32.111565-04
+33	1	3	Hola Javier! :D	2023-06-27 22:15:12.480672-04
+34	3	1	Hola\n	2023-06-27 22:16:25.238162-04
+35	3	2	Hola Gabriel!	2023-06-27 22:19:50.609753-04
+36	1	2	ISW es mi ramo favorito	2023-06-27 22:21:02.441217-04
+37	1	2	What's up?	2023-06-28 12:29:16.915655-04
+38	2	1	The sky	2023-06-28 12:29:30.881782-04
+39	1	3	Hola de nuevo	2023-06-28 14:35:35.673367-04
+40	1	3	Chao	2023-06-28 21:51:18.559159-04
+41	1	2	Hola de nuevo!	2023-06-28 21:54:18.538672-04
 \.
 
 
@@ -200,7 +206,6 @@ COPY public.usuarios (id, username) FROM stdin;
 2	Gabo
 3	Moai
 4	Ruiz
-0	1
 \.
 
 
@@ -215,7 +220,7 @@ SELECT pg_catalog.setval('public.dispositivos_id_seq', 1, false);
 -- Name: mensajes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: sofiwi
 --
 
-SELECT pg_catalog.setval('public.mensajes_id_seq', 23, true);
+SELECT pg_catalog.setval('public.mensajes_id_seq', 41, true);
 
 
 --

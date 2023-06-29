@@ -31,7 +31,7 @@ function App(props) {
                 </header>
                 <div>
                   <MDBContainer fluid className="py-3" style={{ backgroundColor: "#eee" }}>    
-                    <Get_contacts userid = {props.userid}/>
+                    <Get_contacts userid = {props.userid} username = {props.username}/>
                   </MDBContainer>
                 </div>
               </>

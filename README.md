@@ -36,4 +36,5 @@ Para enviar un mensaje, primero **hacer click en un dispositvo** y luego escribi
 
 Al hacer click en la tuerca en la esquina superior derecha, se abre la página de admin donde ahora los celulares se pueden mover a las distintas secciones
 
-**Nota: para la parte de admin es necesario que todos los dispositivos estén desconectados antes de moverlos a las celdas**
+## Importante: para la parte de admin
+Primero que todo, para ingresar a la aplicación ingresar los números 1, 2 o 3. Luego para ver la parte de admin, **todos los dispositivos deben comenzar en la celda de desconectados**. Luego de eso se pueden mover a donde uno quiera. 

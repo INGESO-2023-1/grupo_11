@@ -1,28 +1,25 @@
 .contact_list {
-  	height: 30vh;
-  	overflow: hidden;
-  	overflow-y: scroll; 
-  	text-align: center;
+    height: 30vh;
+    overflow-y: scroll;
+}
 
+.chat_spacer {
+    width: 20vw;
 }
-.chat_spacer{
-	width: 20vw;
+
+.spacer {
+    height: 10vh;
+    width: auto;
+    background-color: white;
 }
-.spacer{
-	height: 10vh;  	
-	width: auto;	
-	background-color: white;
-}
-.chat{
-	width: auto;
-	height: 50vh;
-	overflow: hidden;
-  	overflow-y: scroll; 
-  	text-align: center;
+
+.chat {
+    width: auto;
+    height: 50vh;
+    overflow-y: scroll;
 }
 
 .backButton {
-    padding: 10px 20px; 
-    margin: 10px; 
-  }
-  
+    padding: 10px 20px;
+    margin: 10px;
+}

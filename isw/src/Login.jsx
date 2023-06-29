@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdb-react-ui-kit
 import App from './App'
 
 const Login = ({ onSend })=> {
+    const [username, setUsername] = useState('');
     const [number, setNumber] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
     const [error, setError] = useState('');
@@ -16,7 +17,7 @@ const Login = ({ onSend })=> {
         try {
             const response = await fetch("http://localhost:5001/usuarios/"+number);
             const data = await response.json();
-            console.log(data)
+            setUsername(data[0].username)
             if(data.length !== 0){
                 setLoggedIn(true);
             }else{
@@ -27,8 +28,9 @@ const Login = ({ onSend })=> {
             console.error('Login failed:', error);
         }
     };
+    
     if (loggedIn) {
-        return <App userid={number}/>;
+        return <App userid={number} username = {username}/>;
     }
 
     return (

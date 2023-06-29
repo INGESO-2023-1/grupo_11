@@ -5,15 +5,17 @@ import {
 } from "mdb-react-ui-kit";
 
 
-const Add_message = ({ onSend }) =>{
+const Add_message = ({ onSend, originId, recipientId}) =>{
 	const [description, setDescription] = useState("");
 	const onsubmit  = async e =>{
 		e.preventDefault();
+        console.log(onSend.origin_id)
 		try{
-			const id1 = 0
-			const id2 = 1
-			const body = {description};
-			const response = await fetch("http://localhost:5001/mensajes/"+id1+"/"+id2,{
+			const body = {
+                origigin_id: originId,
+                recipient_id: recipientId,
+                description};
+			const response = await fetch("http://localhost:5001/mensajes/"+originId+"/"+recipientId,{
 				method: "POST",
 				headers: {"Content-Type":"application/json"},
 				body: JSON.stringify(body)
